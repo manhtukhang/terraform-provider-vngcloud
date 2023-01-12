@@ -10,7 +10,6 @@
 package vserver
 
 import (
-	"bytes"
 	"context"
 	"fmt"
 	"github.com/antihax/optional"
@@ -33,15 +32,15 @@ NetworkInterfaceElasticRestControllerV2ApiService Create Network Interface Elast
  * @param createNetworkInterfaceRequest createNetworkInterfaceRequest
  * @param projectId The project id
 
-@return DataResponse
+@return DataResponseNetworkInterfaceElastic
 */
-func (a *NetworkInterfaceElasticRestControllerV2ApiService) CreateNetworkInterfaceElasticUsingPOST(ctx context.Context, createNetworkInterfaceRequest CreateNetworkInterfaceRequest, projectId string) (DataResponse, *http.Response, error) {
+func (a *NetworkInterfaceElasticRestControllerV2ApiService) CreateNetworkInterfaceElasticUsingPOST(ctx context.Context, createNetworkInterfaceRequest CreateNetworkInterfaceRequest, projectId string) (DataResponseNetworkInterfaceElastic, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue DataResponse
+		localVarReturnValue DataResponseNetworkInterfaceElastic
 	)
 
 	// create path and map variables
@@ -81,8 +80,8 @@ func (a *NetworkInterfaceElasticRestControllerV2ApiService) CreateNetworkInterfa
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
 	}
@@ -100,7 +99,7 @@ func (a *NetworkInterfaceElasticRestControllerV2ApiService) CreateNetworkInterfa
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v DataResponse
+			var v DataResponseNetworkInterfaceElastic
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -168,8 +167,8 @@ func (a *NetworkInterfaceElasticRestControllerV2ApiService) DeleteNetworkInterfa
 		return localVarHttpResponse, err
 	}
 
-	localVarBody, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarHttpResponse, err
 	}
@@ -192,15 +191,15 @@ NetworkInterfaceElasticRestControllerV2ApiService Get Network Interface Elastic
  * @param networkInterfaceId The network interface id
  * @param projectId The project id
 
-@return DataResponse
+@return DataResponseNetworkInterfaceElastic
 */
-func (a *NetworkInterfaceElasticRestControllerV2ApiService) GetNetworkInterfaceElasticUsingGET(ctx context.Context, networkInterfaceId string, projectId string) (DataResponse, *http.Response, error) {
+func (a *NetworkInterfaceElasticRestControllerV2ApiService) GetNetworkInterfaceElasticUsingGET(ctx context.Context, networkInterfaceId string, projectId string) (DataResponseNetworkInterfaceElastic, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue DataResponse
+		localVarReturnValue DataResponseNetworkInterfaceElastic
 	)
 
 	// create path and map variables
@@ -239,8 +238,8 @@ func (a *NetworkInterfaceElasticRestControllerV2ApiService) GetNetworkInterfaceE
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
 	}
@@ -258,7 +257,7 @@ func (a *NetworkInterfaceElasticRestControllerV2ApiService) GetNetworkInterfaceE
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v DataResponse
+			var v DataResponseNetworkInterfaceElastic
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -345,8 +344,8 @@ func (a *NetworkInterfaceElasticRestControllerV2ApiService) ListNetworkInterface
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
 	}
@@ -387,15 +386,15 @@ NetworkInterfaceElasticRestControllerV2ApiService Rename Network Interface Elast
  * @param projectId The project id
  * @param renameNetworkInterfaceRequest renameNetworkInterfaceRequest
 
-@return DataResponse
+@return DataResponseNetworkInterfaceElastic
 */
-func (a *NetworkInterfaceElasticRestControllerV2ApiService) RenameNetworkInterfaceElasticUsingPUT(ctx context.Context, networkInterfaceId string, projectId string, renameNetworkInterfaceRequest RenameNetworkInterfaceRequest) (DataResponse, *http.Response, error) {
+func (a *NetworkInterfaceElasticRestControllerV2ApiService) RenameNetworkInterfaceElasticUsingPUT(ctx context.Context, networkInterfaceId string, projectId string, renameNetworkInterfaceRequest RenameNetworkInterfaceRequest) (DataResponseNetworkInterfaceElastic, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Put")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue DataResponse
+		localVarReturnValue DataResponseNetworkInterfaceElastic
 	)
 
 	// create path and map variables
@@ -436,8 +435,8 @@ func (a *NetworkInterfaceElasticRestControllerV2ApiService) RenameNetworkInterfa
 		return localVarReturnValue, localVarHttpResponse, err
 	}
 
-	localVarBody, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
 	if err != nil {
 		return localVarReturnValue, localVarHttpResponse, err
 	}
@@ -455,7 +454,7 @@ func (a *NetworkInterfaceElasticRestControllerV2ApiService) RenameNetworkInterfa
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v DataResponse
+			var v DataResponseNetworkInterfaceElastic
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

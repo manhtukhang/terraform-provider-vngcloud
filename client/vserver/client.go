@@ -57,6 +57,8 @@ type APIClient struct {
 
 	NetworkRestControllerApi *NetworkRestControllerV2ApiService
 
+	NetworkInterfaceElasticRestControllerV2Api *NetworkInterfaceElasticRestControllerV2ApiService
+
 	ProjectRestControllerApi *ProjectRestControllerApiService
 
 	QuotaRestControllerApi *QuotaRestControllerApiService
@@ -103,6 +105,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ImageRestControllerApi = (*ImageRestControllerApiService)(&c.common)
 	c.LoadBalancerRestControllerApi = (*LoadBalancerRestControllerApiService)(&c.common)
 	c.NetworkAclRestControllerApi = (*NetworkAclRestControllerApiService)(&c.common)
+	c.NetworkInterfaceElasticRestControllerV2Api = (*NetworkInterfaceElasticRestControllerV2ApiService)(&c.common)
 	c.NetworkRestControllerApi = (*NetworkRestControllerV2ApiService)(&c.common)
 	c.ProjectRestControllerApi = (*ProjectRestControllerApiService)(&c.common)
 	c.QuotaRestControllerApi = (*QuotaRestControllerApiService)(&c.common)
