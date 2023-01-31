@@ -4607,7 +4607,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/DataResponse"
+            $ref: "#/definitions/DataResponse«NetworkInterfaceElastic»"
         "401":
           description: "Unauthorized"
         "500":
@@ -4638,7 +4638,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/DataResponse"
+            $ref: "#/definitions/DataResponse«NetworkInterfaceElastic»"
         "401":
           description: "Unauthorized"
         "500":
@@ -4706,7 +4706,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/DataResponse"
+            $ref: "#/definitions/DataResponse«NetworkInterfaceElastic»"
         "401":
           description: "Unauthorized"
         "500":
@@ -8989,6 +8989,12 @@ definitions:
       data:
         $ref: "#/definitions/NetworkDto"
     title: "DataResponse«NetworkDto»"
+  DataResponse«NetworkInterfaceElastic»:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/NetworkInterfaceElastic"
+    title: "DataResponse«NetworkInterfaceElastic»"
   DataResponse«Pool»:
     type: "object"
     properties:
